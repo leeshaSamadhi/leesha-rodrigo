@@ -1,0 +1,2 @@
+document.querySelectorAll('.skill-bar-fill').forEach(el=>el.style.width=el.dataset.width+'%');
+document.querySelectorAll('.load-embed').forEach(button=>button.addEventListener('click',()=>{const frame=document.createElement('iframe');frame.src=button.dataset.src;frame.title=button.dataset.title;frame.allowFullscreen=true;frame.loading='lazy';button.closest('.embed-panel').append(frame);button.remove()}));

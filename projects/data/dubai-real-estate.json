@@ -1,0 +1,1399 @@
+{
+  "raw": 81601,
+  "rawSales": 61046,
+  "sales": 53296,
+  "cleaned": 70804,
+  "median": 1316143.0,
+  "mean": 1585592.5650022516,
+  "missingSizes": 272,
+  "dateMin": "2023-01-02 06:56:17",
+  "dateMax": "2023-06-26 16:07:02",
+  "types": [
+    {
+      "name": "Flat",
+      "count": 41388,
+      "median": 1139875.0,
+      "mean": 1483765.9193075288
+    },
+    {
+      "name": "Villa",
+      "count": 4606,
+      "median": 2154409.0,
+      "mean": 2333427.054600521
+    },
+    {
+      "name": "Residential",
+      "count": 2642,
+      "median": 2163500.0,
+      "mean": 2144483.9822066617
+    },
+    {
+      "name": "Hotel Apartment",
+      "count": 1514,
+      "median": 1114967.81,
+      "mean": 1656849.6672985468
+    },
+    {
+      "name": "Office",
+      "count": 1247,
+      "median": 900000.0,
+      "mean": 1149358.3565356855
+    },
+    {
+      "name": "Hotel Rooms",
+      "count": 989,
+      "median": 939550.0,
+      "mean": 1281614.781081901
+    },
+    {
+      "name": "Shop",
+      "count": 450,
+      "median": 1026507.5,
+      "mean": 1373451.678911111
+    },
+    {
+      "name": "Commercial",
+      "count": 416,
+      "median": 2025120.0,
+      "mean": 1869422.693221154
+    },
+    {
+      "name": "Land",
+      "count": 15,
+      "median": 1240000.0,
+      "mean": 1215381.3333333333
+    },
+    {
+      "name": "Industrial",
+      "count": 9,
+      "median": 2750000.0,
+      "mean": 2669444.4444444445
+    },
+    {
+      "name": "Stacked Townhouses",
+      "count": 7,
+      "median": 1175000.0,
+      "mean": 1215271.5542857142
+    },
+    {
+      "name": "Residential Flats",
+      "count": 4,
+      "median": 1725000.0,
+      "mean": 1812500.0
+    },
+    {
+      "name": "Government Housing",
+      "count": 3,
+      "median": 1000000.0,
+      "mean": 1666666.6666666667
+    },
+    {
+      "name": "Residential / Attached Villas",
+      "count": 2,
+      "median": 981660.0,
+      "mean": 981660.0
+    },
+    {
+      "name": "Airport",
+      "count": 1,
+      "median": 4337888.0,
+      "mean": 4337888.0
+    },
+    {
+      "name": "Show Rooms",
+      "count": 1,
+      "median": 3061571.43,
+      "mean": 3061571.43
+    }
+  ],
+  "areas": [
+    {
+      "name": "JUMEIRAH VILLAGE CIRCLE",
+      "count": 6478,
+      "median": 702874.0,
+      "mean": 802971.4129854894
+    },
+    {
+      "name": "BUSINESS BAY",
+      "count": 4447,
+      "median": 1350000.0,
+      "mean": 1595468.3923566449
+    },
+    {
+      "name": "DUBAI CREEK HARBOUR",
+      "count": 2988,
+      "median": 2097888.0,
+      "mean": 2274659.843651272
+    },
+    {
+      "name": "DUBAI MARINA",
+      "count": 2428,
+      "median": 1484000.0,
+      "mean": 1757621.4098599672
+    },
+    {
+      "name": "JUMEIRAH LAKES TOWERS",
+      "count": 2383,
+      "median": 1003000.0,
+      "mean": 1194532.163680235
+    },
+    {
+      "name": "BURJ KHALIFA",
+      "count": 2146,
+      "median": 2440366.5,
+      "mean": 2639588.199026095
+    },
+    {
+      "name": "ARJAN",
+      "count": 1822,
+      "median": 626631.0,
+      "mean": 701352.6967727771
+    },
+    {
+      "name": "AL HEBIAH FIFTH",
+      "count": 1759,
+      "median": 2221000.0,
+      "mean": 2294627.3337066513
+    },
+    {
+      "name": "DUBAI HILLS",
+      "count": 1524,
+      "median": 1575000.0,
+      "mean": 1849111.1004199474
+    },
+    {
+      "name": "SOBHA HEARTLAND",
+      "count": 1456,
+      "median": 1414576.0,
+      "mean": 1651013.7565796704
+    },
+    {
+      "name": "INTERNATIONAL CITY PH 1",
+      "count": 1065,
+      "median": 320000.0,
+      "mean": 432638.13760563376
+    },
+    {
+      "name": "MARSA DUBAI",
+      "count": 1025,
+      "median": 3459400.0,
+      "mean": 3727442.3981658537
+    },
+    {
+      "name": "TOWN SQUARE",
+      "count": 1022,
+      "median": 628888.0,
+      "mean": 800110.9784735813
+    },
+    {
+      "name": "AL FURJAN",
+      "count": 1017,
+      "median": 904432.0,
+      "mean": 1105282.5287905606
+    },
+    {
+      "name": "PALM JUMEIRAH",
+      "count": 965,
+      "median": 2691920.0,
+      "mean": 2729943.6412435235
+    },
+    {
+      "name": "SILICON OASIS",
+      "count": 929,
+      "median": 483000.0,
+      "mean": 584979.1609795479
+    },
+    {
+      "name": "MEYDAN ONE",
+      "count": 904,
+      "median": 660164.5,
+      "mean": 837957.7640044249
+    },
+    {
+      "name": "DAMAC HILLS",
+      "count": 900,
+      "median": 857000.0,
+      "mean": 1145802.8944444444
+    },
+    {
+      "name": "HADAEQ SHEIKH MOHAMMED BIN RASHID",
+      "count": 805,
+      "median": 2086888.0,
+      "mean": 2203422.1428571427
+    },
+    {
+      "name": "AL YELAYISS 2",
+      "count": 780,
+      "median": 1790888.0,
+      "mean": 1570876.0717948717
+    },
+    {
+      "name": "WADI AL SAFA 5",
+      "count": 764,
+      "median": 2283888.0,
+      "mean": 2396832.5837696334
+    },
+    {
+      "name": "DUBAI LAND RESIDENCE COMPLEX",
+      "count": 756,
+      "median": 454819.5,
+      "mean": 509381.2445634921
+    },
+    {
+      "name": "JUMEIRAH VILLAGE TRIANGLE",
+      "count": 747,
+      "median": 672302.4,
+      "mean": 771485.0218875502
+    },
+    {
+      "name": "DUBAI HARBOUR",
+      "count": 705,
+      "median": 3144374.0,
+      "mean": 3467399.372510638
+    },
+    {
+      "name": "DUBAI SPORTS CITY",
+      "count": 701,
+      "median": 450000.0,
+      "mean": 591828.0685021398
+    },
+    {
+      "name": "MADINAT HIND 4",
+      "count": 589,
+      "median": 915000.0,
+      "mean": 950407.9032258064
+    },
+    {
+      "name": "DUBAI PRODUCTION CITY",
+      "count": 567,
+      "median": 557840.0,
+      "mean": 648270.2477425043
+    },
+    {
+      "name": "VILLANOVA",
+      "count": 452,
+      "median": 1808000.0,
+      "mean": 1860152.5995575222
+    },
+    {
+      "name": "UM SUQAIM THIRD",
+      "count": 451,
+      "median": 2458000.0,
+      "mean": 2517012.3725055433
+    },
+    {
+      "name": "AL KIFAF",
+      "count": 422,
+      "median": 2201923.5,
+      "mean": 2251321.1363744074
+    },
+    {
+      "name": "DUBAI STUDIO CITY",
+      "count": 383,
+      "median": 685000.0,
+      "mean": 720523.4628459531
+    },
+    {
+      "name": "MADINAT DUBAI ALMELAHEYAH",
+      "count": 382,
+      "median": 2285888.0,
+      "mean": 2211871.892670157
+    },
+    {
+      "name": "THE GREENS",
+      "count": 364,
+      "median": 1392761.0,
+      "mean": 1499945.107252747
+    },
+    {
+      "name": "THE FIELD",
+      "count": 361,
+      "median": 3598249.0,
+      "mean": 3715350.3185595567
+    },
+    {
+      "name": "AL YUFRAH 1",
+      "count": 348,
+      "median": 1747888.0,
+      "mean": 1834192.5344827587
+    },
+    {
+      "name": "DUBAI SCIENCE PARK",
+      "count": 344,
+      "median": 769926.0,
+      "mean": 902408.3808139535
+    },
+    {
+      "name": "JUMEIRAH BEACH RESIDENCE",
+      "count": 329,
+      "median": 2050000.0,
+      "mean": 2275112.631306991
+    },
+    {
+      "name": "DUBAI HEALTHCARE CITY - PHASE 2",
+      "count": 327,
+      "median": 1244888.0,
+      "mean": 1524457.3275840979
+    },
+    {
+      "name": "AL WASL",
+      "count": 314,
+      "median": 1930500.0,
+      "mean": 2354125.7643312104
+    },
+    {
+      "name": "JABAL ALI FIRST",
+      "count": 305,
+      "median": 2000000.0,
+      "mean": 1721422.1821311475
+    },
+    {
+      "name": "MOTOR CITY",
+      "count": 299,
+      "median": 728000.0,
+      "mean": 939105.729632107
+    },
+    {
+      "name": "DUBAI SOUTH",
+      "count": 294,
+      "median": 570500.0,
+      "mean": 713276.9855782313
+    },
+    {
+      "name": "WARSAN FIRST",
+      "count": 290,
+      "median": 764000.0,
+      "mean": 720750.6551724138
+    },
+    {
+      "name": "MBR DISTRICT 1",
+      "count": 260,
+      "median": 1446000.0,
+      "mean": 1839184.5373076922
+    },
+    {
+      "name": "DISCOVERY GARDENS",
+      "count": 232,
+      "median": 397500.0,
+      "mean": 414542.09926724137
+    },
+    {
+      "name": "ARABIAN RANCHES III",
+      "count": 216,
+      "median": 2172500.0,
+      "mean": 2279686.378472222
+    },
+    {
+      "name": "CITY WALK",
+      "count": 211,
+      "median": 2884210.0,
+      "mean": 2937811.1943601896
+    },
+    {
+      "name": "EMAAR SOUTH",
+      "count": 209,
+      "median": 1250000.0,
+      "mean": 1272874.009569378
+    },
+    {
+      "name": "ZAABEEL SECOND",
+      "count": 203,
+      "median": 2614888.0,
+      "mean": 2775681.769458128
+    },
+    {
+      "name": "DUBAI DESIGN DISTRICT",
+      "count": 183,
+      "median": 2184000.0,
+      "mean": 2484650.2732240437
+    },
+    {
+      "name": "DUBAI MARITIME CITY",
+      "count": 173,
+      "median": 1545000.0,
+      "mean": 1857636.9595375722
+    },
+    {
+      "name": "AL HEBIAH SIXTH",
+      "count": 170,
+      "median": 2451500.0,
+      "mean": 2537106.0588235296
+    },
+    {
+      "name": "REMRAAM",
+      "count": 166,
+      "median": 450000.0,
+      "mean": 527851.2307831325
+    },
+    {
+      "name": "BARSHA HEIGHTS",
+      "count": 162,
+      "median": 887163.0,
+      "mean": 959271.100308642
+    },
+    {
+      "name": "INTERNATIONAL CITY PH 2 & 3",
+      "count": 153,
+      "median": 400000.0,
+      "mean": 423187.1590196078
+    },
+    {
+      "name": "MIRDIF",
+      "count": 152,
+      "median": 1653678.5,
+      "mean": 1703312.1118421052
+    },
+    {
+      "name": "WADI AL SAFA 7",
+      "count": 150,
+      "median": 542508.5,
+      "mean": 625144.4133333333
+    },
+    {
+      "name": "EMIRATE LIVING",
+      "count": 138,
+      "median": 2350000.0,
+      "mean": 2526622.652173913
+    },
+    {
+      "name": "DUBAI WATER CANAL",
+      "count": 135,
+      "median": 3402800.0,
+      "mean": 3232934.311111111
+    },
+    {
+      "name": "AL HEBIAH FOURTH",
+      "count": 134,
+      "median": 2725000.0,
+      "mean": 2952988.813432836
+    },
+    {
+      "name": "LA MER",
+      "count": 133,
+      "median": 2500000.0,
+      "mean": 2733034.090225564
+    },
+    {
+      "name": "LIWAN",
+      "count": 128,
+      "median": 396000.0,
+      "mean": 507540.821484375
+    },
+    {
+      "name": "MAJAN",
+      "count": 118,
+      "median": 613637.5,
+      "mean": 691505.4579661016
+    },
+    {
+      "name": "DUBAI INVESTMENT PARK FIRST",
+      "count": 117,
+      "median": 1143000.0,
+      "mean": 1200225.3247863248
+    },
+    {
+      "name": "TILAL AL GHAF",
+      "count": 117,
+      "median": 2400000.0,
+      "mean": 2431982.905982906
+    },
+    {
+      "name": "MEYDAN AVENUE",
+      "count": 111,
+      "median": 1160000.0,
+      "mean": 1367167.9364864863
+    },
+    {
+      "name": "THE LAKES",
+      "count": 104,
+      "median": 3250000.0,
+      "mean": 3032640.4326923075
+    },
+    {
+      "name": "JUMEIRAH LIVING",
+      "count": 100,
+      "median": 2157000.0,
+      "mean": 2483726.24
+    },
+    {
+      "name": "AKOYA OXYGEN",
+      "count": 94,
+      "median": 1150000.0,
+      "mean": 1174537.6595744682
+    },
+    {
+      "name": "NAD AL SHIBA FIRST",
+      "count": 92,
+      "median": 4082000.0,
+      "mean": 4050521.7391304346
+    },
+    {
+      "name": "THE WORLD",
+      "count": 92,
+      "median": 1300000.0,
+      "mean": 1564472.1823913043
+    },
+    {
+      "name": "MIRA",
+      "count": 87,
+      "median": 2000000.0,
+      "mean": 2057892.528735632
+    },
+    {
+      "name": "MBR DISTRICT 7",
+      "count": 84,
+      "median": 1025000.0,
+      "mean": 1096074.2428571428
+    },
+    {
+      "name": "ME'AISEM FIRST",
+      "count": 83,
+      "median": 4059990.0,
+      "mean": 3591793.5843373486
+    },
+    {
+      "name": "SERENA",
+      "count": 82,
+      "median": 1977500.0,
+      "mean": 1969878.0487804879
+    },
+    {
+      "name": "JUMEIRAH GOLF",
+      "count": 80,
+      "median": 1535411.65,
+      "mean": 1727225.530875
+    },
+    {
+      "name": "THE VALLEY",
+      "count": 77,
+      "median": 1580000.0,
+      "mean": 1601414.025974026
+    },
+    {
+      "name": "MUHAISANAH FIRST",
+      "count": 74,
+      "median": 1747579.0,
+      "mean": 1641319.9797297297
+    },
+    {
+      "name": "DOWN TOWN JABAL ALI",
+      "count": 70,
+      "median": 434255.0,
+      "mean": 541954.7428571428
+    },
+    {
+      "name": "JADDAF WATERFRONT",
+      "count": 63,
+      "median": 1330000.0,
+      "mean": 1489431.219047619
+    },
+    {
+      "name": "LIVING LEGENDS",
+      "count": 60,
+      "median": 1600000.0,
+      "mean": 1537022.2333333334
+    },
+    {
+      "name": "AL HEBIAH THIRD",
+      "count": 55,
+      "median": 3384000.0,
+      "mean": 3275598.909090909
+    },
+    {
+      "name": "MUDON",
+      "count": 55,
+      "median": 2300000.0,
+      "mean": 2271718.1818181816
+    },
+    {
+      "name": "MADINAT AL MATAAR",
+      "count": 51,
+      "median": 1725000.0,
+      "mean": 2032339.0784313725
+    },
+    {
+      "name": "AL KHAIL HEIGHTS",
+      "count": 43,
+      "median": 530000.0,
+      "mean": 629767.4418604651
+    },
+    {
+      "name": "ARABIAN RANCHES I",
+      "count": 40,
+      "median": 2767500.0,
+      "mean": 2717750.0
+    },
+    {
+      "name": "AL BARARI",
+      "count": 37,
+      "median": 1700000.0,
+      "mean": 1970517.6756756757
+    },
+    {
+      "name": "DUBAI INVESTMENT PARK SECOND",
+      "count": 37,
+      "median": 470328.81,
+      "mean": 518208.90810810815
+    },
+    {
+      "name": "SUFOUH GARDENS",
+      "count": 37,
+      "median": 1150000.0,
+      "mean": 1104016.8648648649
+    },
+    {
+      "name": "ZAABEEL FIRST",
+      "count": 35,
+      "median": 4533337.0,
+      "mean": 4620388.571428572
+    },
+    {
+      "name": "SUSTAINABLE CITY",
+      "count": 34,
+      "median": 3575000.0,
+      "mean": 3391259.404117647
+    },
+    {
+      "name": "TECOM SITE A",
+      "count": 31,
+      "median": 3180000.0,
+      "mean": 3125717.935483871
+    },
+    {
+      "name": "TRADE CENTER SECOND",
+      "count": 29,
+      "median": 2100000.0,
+      "mean": 2156854.5862068967
+    },
+    {
+      "name": "BLUEWATERS",
+      "count": 28,
+      "median": 4575000.0,
+      "mean": 4294642.857142857
+    },
+    {
+      "name": "JUMEIRAH HEIGHTS",
+      "count": 27,
+      "median": 2650000.0,
+      "mean": 2629582.592592593
+    },
+    {
+      "name": "WADI AL SAFA 3",
+      "count": 27,
+      "median": 750000.0,
+      "mean": 915082.2222222222
+    },
+    {
+      "name": "ARABIAN RANCHES II",
+      "count": 25,
+      "median": 2550000.0,
+      "mean": 2569940.0
+    },
+    {
+      "name": "RUKAN",
+      "count": 24,
+      "median": 919100.0,
+      "mean": 888679.8333333334
+    },
+    {
+      "name": "AL THANYAH FIFTH",
+      "count": 22,
+      "median": 262300.0,
+      "mean": 372361.3409090909
+    },
+    {
+      "name": "AL BARSHAA SOUTH THIRD",
+      "count": 21,
+      "median": 768000.0,
+      "mean": 840930.0476190476
+    },
+    {
+      "name": "HOR AL ANZ",
+      "count": 21,
+      "median": 1500000.0,
+      "mean": 1556618.0952380951
+    },
+    {
+      "name": "WADI AL SAFA 2",
+      "count": 21,
+      "median": 815853.0,
+      "mean": 996536.0476190476
+    },
+    {
+      "name": "ABU HAIL",
+      "count": 20,
+      "median": 1075000.0,
+      "mean": 1105049.05
+    },
+    {
+      "name": "AL KARAMA",
+      "count": 18,
+      "median": 4550000.0,
+      "mean": 4615722.222222222
+    },
+    {
+      "name": "DUBAI WATER FRONT",
+      "count": 18,
+      "median": 510000.0,
+      "mean": 578842.3333333334
+    },
+    {
+      "name": "AL KHEERAN",
+      "count": 17,
+      "median": 2500000.0,
+      "mean": 2330470.588235294
+    },
+    {
+      "name": "CHERRYWOODS",
+      "count": 15,
+      "median": 2000000.0,
+      "mean": 2047333.3333333333
+    },
+    {
+      "name": "AL SATWA",
+      "count": 14,
+      "median": 3052500.0,
+      "mean": 3006468.3571428573
+    },
+    {
+      "name": "GRAND VIEWS",
+      "count": 11,
+      "median": 4220000.0,
+      "mean": 4232272.7272727275
+    },
+    {
+      "name": "JUMEIRAH FIRST",
+      "count": 10,
+      "median": 2047500.0,
+      "mean": 2453990.0
+    },
+    {
+      "name": "AL MARARR",
+      "count": 9,
+      "median": 3100000.0,
+      "mean": 2969377.777777778
+    },
+    {
+      "name": "DMCC-EZ2",
+      "count": 8,
+      "median": 104748.5,
+      "mean": 124311.0
+    },
+    {
+      "name": "DUBAI INDUSTRIAL CITY",
+      "count": 8,
+      "median": 690000.0,
+      "mean": 666325.875
+    },
+    {
+      "name": "JUMEIRAH ISLANDS",
+      "count": 8,
+      "median": 4475000.0,
+      "mean": 4001830.5
+    },
+    {
+      "name": "AL BARSHA FIRST",
+      "count": 7,
+      "median": 1100271.0,
+      "mean": 1107181.5714285714
+    },
+    {
+      "name": "MINA RASHID",
+      "count": 7,
+      "median": 2250000.0,
+      "mean": 2590046.8571428573
+    },
+    {
+      "name": "AL MUTEENA",
+      "count": 5,
+      "median": 2000000.0,
+      "mean": 1814000.0
+    },
+    {
+      "name": "AL WAHA",
+      "count": 5,
+      "median": 1215000.0,
+      "mean": 1255000.0
+    },
+    {
+      "name": "AL WAHEDA",
+      "count": 5,
+      "median": 850000.0,
+      "mean": 871660.0
+    },
+    {
+      "name": "DUBAI GOLF CITY",
+      "count": 5,
+      "median": 2950000.0,
+      "mean": 2950000.0
+    },
+    {
+      "name": "NAIF",
+      "count": 5,
+      "median": 2550000.0,
+      "mean": 2182500.0
+    },
+    {
+      "name": "POLO TOWNHOUSES IGO",
+      "count": 5,
+      "median": 3600000.0,
+      "mean": 3354000.0
+    },
+    {
+      "name": "REGA AL BUTEEN",
+      "count": 5,
+      "median": 1000000.0,
+      "mean": 900400.0
+    },
+    {
+      "name": "TRADE CENTER FIRST",
+      "count": 5,
+      "median": 4350000.0,
+      "mean": 3630000.0
+    },
+    {
+      "name": "AL BADA",
+      "count": 4,
+      "median": 2100000.0,
+      "mean": 2125000.0
+    },
+    {
+      "name": "AL RAFFA",
+      "count": 4,
+      "median": 2250000.0,
+      "mean": 2413750.0
+    },
+    {
+      "name": "CITY OF ARABIA",
+      "count": 4,
+      "median": 690884.5,
+      "mean": 625692.25
+    },
+    {
+      "name": "JUMEIRAH PARK",
+      "count": 4,
+      "median": 4625000.0,
+      "mean": 4687500.0
+    },
+    {
+      "name": "AL MURQABAT",
+      "count": 3,
+      "median": 800000.0,
+      "mean": 726654.3333333334
+    },
+    {
+      "name": "PORT SAEED",
+      "count": 3,
+      "median": 1250000.0,
+      "mean": 1241666.6666666667
+    },
+    {
+      "name": "AL BARAHA",
+      "count": 2,
+      "median": 3700000.0,
+      "mean": 3700000.0
+    },
+    {
+      "name": "AL JAFLIYA",
+      "count": 2,
+      "median": 1500000.0,
+      "mean": 1500000.0
+    },
+    {
+      "name": "AL QUSAIS INDUSTRIAL FOURTH",
+      "count": 2,
+      "median": 415000.0,
+      "mean": 415000.0
+    },
+    {
+      "name": "AL BARSHAA SOUTH FIRST",
+      "count": 1,
+      "median": 2500000.0,
+      "mean": 2500000.0
+    },
+    {
+      "name": "AL DHAGAYA",
+      "count": 1,
+      "median": 2850000.0,
+      "mean": 2850000.0
+    },
+    {
+      "name": "AL HAMRIYA",
+      "count": 1,
+      "median": 5005000.0,
+      "mean": 5005000.0
+    },
+    {
+      "name": "AL THANYAH THIRD",
+      "count": 1,
+      "median": 3720000.0,
+      "mean": 3720000.0
+    },
+    {
+      "name": "DUBAI HEALTHCARE CITY - PHASE 1",
+      "count": 1,
+      "median": 2500000.0,
+      "mean": 2500000.0
+    },
+    {
+      "name": "EYAL NASSER",
+      "count": 1,
+      "median": 5000000.0,
+      "mean": 5000000.0
+    },
+    {
+      "name": "JUMEIRA BAY",
+      "count": 1,
+      "median": 4800000.0,
+      "mean": 4800000.0
+    },
+    {
+      "name": "WADI AL SAFA 4",
+      "count": 1,
+      "median": 3255000.0,
+      "mean": 3255000.0
+    }
+  ],
+  "landmarks": [
+    {
+      "name": "Sports City Swimming Academy",
+      "count": 11450,
+      "median": 760000.0,
+      "mean": 913316.7272489083
+    },
+    {
+      "name": "Downtown Dubai",
+      "count": 8104,
+      "median": 1410415.0,
+      "mean": 1683006.923571076
+    },
+    {
+      "name": "Burj Al Arab",
+      "count": 5221,
+      "median": 1688010.0,
+      "mean": 1956102.2002509094
+    },
+    {
+      "name": "Motor City",
+      "count": 4315,
+      "median": 729888.0,
+      "mean": 940812.5500023174
+    },
+    {
+      "name": "Dubai International Airport",
+      "count": 3489,
+      "median": 1979888.0,
+      "mean": 2125884.747225566
+    },
+    {
+      "name": "IMG World Adventures",
+      "count": 3137,
+      "median": 754200.0,
+      "mean": 1283603.890541919
+    },
+    {
+      "name": "Burj Khalifa",
+      "count": 2295,
+      "median": 2409000.0,
+      "mean": 2625198.6981960787
+    },
+    {
+      "name": "Dubai Cycling Course",
+      "count": 1257,
+      "median": 673888.0,
+      "mean": 1015853.1183293556
+    },
+    {
+      "name": "Expo 2020 Site",
+      "count": 1135,
+      "median": 670000.0,
+      "mean": 873552.1775859031
+    },
+    {
+      "name": "Global Village",
+      "count": 644,
+      "median": 1600000.0,
+      "mean": 1831092.4519254658
+    },
+    {
+      "name": "Al Makhtoum International Airport",
+      "count": 217,
+      "median": 1236888.0,
+      "mean": 1250512.7880184331
+    },
+    {
+      "name": "Hamdan Sports Complex",
+      "count": 180,
+      "median": 2100000.0,
+      "mean": 2168394.5875
+    },
+    {
+      "name": "Dubai Parks and Resorts",
+      "count": 18,
+      "median": 510000.0,
+      "mean": 578842.3333333334
+    }
+  ],
+  "malls": [
+    {
+      "name": "Marina Mall",
+      "count": 12053,
+      "median": 945536.66,
+      "mean": 1333027.655917199
+    },
+    {
+      "name": "Dubai Mall",
+      "count": 11221,
+      "median": 1724320.0,
+      "mean": 1950728.1207361196
+    },
+    {
+      "name": "Mall of the Emirates",
+      "count": 7363,
+      "median": 850000.0,
+      "mean": 1066106.8784652995
+    },
+    {
+      "name": "City Centre Mirdif",
+      "count": 4021,
+      "median": 1387888.0,
+      "mean": 1455645.3084879385
+    },
+    {
+      "name": "Ibn-e-Battuta Mall",
+      "count": 1762,
+      "median": 798623.7949999999,
+      "mean": 955933.4872417707
+    }
+  ],
+  "metro": [
+    {
+      "name": "Dubai Internet City",
+      "count": 5577,
+      "median": 719000.0,
+      "mean": 828920.0218092165
+    },
+    {
+      "name": "Buj Khalifa Dubai Mall Metro Station",
+      "count": 5404,
+      "median": 1636333.0,
+      "mean": 1888639.9432161362
+    },
+    {
+      "name": "Business Bay Metro Station",
+      "count": 3598,
+      "median": 1503579.5,
+      "mean": 1789125.2354002225
+    },
+    {
+      "name": "Creek Metro Station",
+      "count": 3059,
+      "median": 2119888.0,
+      "mean": 2286486.8707322655
+    },
+    {
+      "name": "Nakheel Metro Station",
+      "count": 2641,
+      "median": 720000.0,
+      "mean": 908720.9767020069
+    },
+    {
+      "name": "Sharaf Dg Metro Station",
+      "count": 1995,
+      "median": 630849.0,
+      "mean": 727294.7271829575
+    },
+    {
+      "name": "Jumeirah Lakes Towers",
+      "count": 1819,
+      "median": 1150000.0,
+      "mean": 1374747.0830456296
+    },
+    {
+      "name": "Damac Properties",
+      "count": 1770,
+      "median": 672302.4,
+      "mean": 999277.5891186439
+    },
+    {
+      "name": "Rashidiya Metro Station",
+      "count": 1724,
+      "median": 398489.75,
+      "mean": 630076.5843271461
+    },
+    {
+      "name": "First Abu Dhabi Bank Metro Station",
+      "count": 1664,
+      "median": 1307750.0,
+      "mean": 1621472.3425721154
+    },
+    {
+      "name": "Ibn Battuta Metro Station",
+      "count": 950,
+      "median": 893310.0,
+      "mean": 1070048.1156
+    },
+    {
+      "name": "Mina Seyahi",
+      "count": 790,
+      "median": 1231061.0,
+      "mean": 1514777.3676329115
+    },
+    {
+      "name": "Jumeirah Beach Residency",
+      "count": 732,
+      "median": 1551482.5,
+      "mean": 1889976.3549043715
+    },
+    {
+      "name": "Palm Jumeirah",
+      "count": 679,
+      "median": 2900000.0,
+      "mean": 2961787.7767746686
+    },
+    {
+      "name": "Jumeirah Beach Resdency",
+      "count": 629,
+      "median": 2259548.0,
+      "mean": 2463180.348171701
+    },
+    {
+      "name": "Harbour Tower",
+      "count": 506,
+      "median": 558920.0,
+      "mean": 701171.2474110671
+    },
+    {
+      "name": "Al Jafiliya Metro Station",
+      "count": 447,
+      "median": 2264032.0,
+      "mean": 2369051.0057046977
+    },
+    {
+      "name": "Noor Bank Metro Station",
+      "count": 407,
+      "median": 1542888.0,
+      "mean": 1823844.1572481573
+    },
+    {
+      "name": "Marina Towers",
+      "count": 290,
+      "median": 2100000.0,
+      "mean": 2267522.6137931035
+    },
+    {
+      "name": "Dubai Marina",
+      "count": 223,
+      "median": 1595000.0,
+      "mean": 1766889.8520179372
+    },
+    {
+      "name": "Marina Mall Metro Station",
+      "count": 222,
+      "median": 1000000.0,
+      "mean": 1365460.5806306305
+    },
+    {
+      "name": "ENERGY Metro Station",
+      "count": 189,
+      "median": 833777.0,
+      "mean": 1060447.8228042328
+    },
+    {
+      "name": "Al Ghubaiba Metro Station",
+      "count": 180,
+      "median": 1564000.0,
+      "mean": 1886119.5666666667
+    },
+    {
+      "name": "Trade Centre Metro Station",
+      "count": 176,
+      "median": 2500000.0,
+      "mean": 2661384.9375
+    },
+    {
+      "name": "Financial Centre",
+      "count": 173,
+      "median": 2600000.0,
+      "mean": 2761760.180346821
+    },
+    {
+      "name": "Healthcare City Metro Station",
+      "count": 151,
+      "median": 896888.0,
+      "mean": 1062806.8588741722
+    },
+    {
+      "name": "Al Jadaf Metro Station",
+      "count": 134,
+      "median": 1135330.0,
+      "mean": 1323783.6002238807
+    },
+    {
+      "name": "UAE Exchange Metro Station",
+      "count": 90,
+      "median": 439000.0,
+      "mean": 548177.7111111111
+    },
+    {
+      "name": "Al Sufouh",
+      "count": 72,
+      "median": 2600000.0,
+      "mean": 2941924.3470833334
+    },
+    {
+      "name": "DANUBE Metro Station",
+      "count": 49,
+      "median": 800000.0,
+      "mean": 1059642.0612244897
+    },
+    {
+      "name": "Knowledge Village",
+      "count": 43,
+      "median": 3100000.0,
+      "mean": 3409534.88372093
+    },
+    {
+      "name": "Abu Baker Al Siddique Metro Station",
+      "count": 24,
+      "median": 1000000.0,
+      "mean": 1190709.1666666667
+    },
+    {
+      "name": "ADCB Metro Station",
+      "count": 18,
+      "median": 4550000.0,
+      "mean": 4615722.222222222
+    },
+    {
+      "name": "Abu Hail Metro Station",
+      "count": 17,
+      "median": 1500000.0,
+      "mean": 1441751.7647058824
+    },
+    {
+      "name": "Salah Al Din Metro Station",
+      "count": 13,
+      "median": 1881000.0,
+      "mean": 1565258.5384615385
+    },
+    {
+      "name": "Emirates Towers Metro Station",
+      "count": 11,
+      "median": 2300000.0,
+      "mean": 2900456.8181818184
+    },
+    {
+      "name": "Etisalat Metro Station",
+      "count": 10,
+      "median": 2793500.0,
+      "mean": 2863403.0
+    },
+    {
+      "name": "Al Rigga Metro Station",
+      "count": 8,
+      "median": 900000.0,
+      "mean": 835245.375
+    },
+    {
+      "name": "Emirates Metro Station",
+      "count": 8,
+      "median": 1855000.0,
+      "mean": 1953125.0
+    },
+    {
+      "name": "Palm Deira Metro Stations",
+      "count": 8,
+      "median": 4317500.0,
+      "mean": 4208125.0
+    },
+    {
+      "name": "Baniyas Square Metro Station",
+      "count": 7,
+      "median": 1645833.0,
+      "mean": 2000714.2857142857
+    },
+    {
+      "name": "Al Fahidi Metro Station",
+      "count": 5,
+      "median": 3000000.0,
+      "mean": 2932000.0
+    },
+    {
+      "name": "Deira City Centre",
+      "count": 3,
+      "median": 1250000.0,
+      "mean": 1241666.6666666667
+    },
+    {
+      "name": "Airport Free Zone",
+      "count": 2,
+      "median": 415000.0,
+      "mean": 415000.0
+    }
+  ],
+  "thresholds": {
+    "Gifts": {
+      "amount": [
+        -1769621.475,
+        4325824.965
+      ],
+      "property_size_sqm": [
+        -84.04000000000002,
+        343.40000000000003
+      ]
+    },
+    "Mortgage": {
+      "amount": [
+        -1612965.2199999997,
+        4585448.699999999
+      ],
+      "property_size_sqm": [
+        -605.7399999999999,
+        1290.5
+      ]
+    },
+    "Sales": {
+      "amount": [
+        -2138342.0500000003,
+        5610826.03
+      ],
+      "property_size_sqm": [
+        -70.775,
+        288.865
+      ]
+    }
+  },
+  "monthly": [
+    {
+      "month": "2023-01",
+      "mean": 1625218.153147161,
+      "count": 8630
+    },
+    {
+      "month": "2023-02",
+      "mean": 1566648.2927761967,
+      "count": 7730
+    },
+    {
+      "month": "2023-03",
+      "mean": 1537549.9339404097,
+      "count": 10740
+    },
+    {
+      "month": "2023-04",
+      "mean": 1516614.3445845677,
+      "count": 7089
+    },
+    {
+      "month": "2023-05",
+      "mean": 1616681.3204227448,
+      "count": 10077
+    },
+    {
+      "month": "2023-06",
+      "mean": 1640537.5785559248,
+      "count": 9030
+    }
+  ]
+}

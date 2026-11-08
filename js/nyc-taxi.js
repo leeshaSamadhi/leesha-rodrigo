@@ -1,0 +1,27 @@
+(async()=>{
+'use strict';
+const $=id=>document.getElementById(id),n=v=>Number(v).toLocaleString('en-US'),money=v=>'$'+v.toFixed(2),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const steps=[
+'12 monthly files → Databricks / PySpark → 39,656,098 trip records. Inspect missing values, non-positive fares, implausible distances and inconsistent timestamps.',
+'Apply distance, fare, passenger and time checks → retain 36,640,985 trips → join pickup and drop-off IDs to taxi-zone names.',
+'Calculate fare per mile and compare medians and the middle 50% spread. Group trips by zone and peak period, then calculate pickups minus drop-offs.',
+'Turn the patterns into three planning priorities: investigate pricing variation, review airport staging, and match allocation to time-of-day demand.'
+];
+document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-step]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('step-detail').textContent=steps[+b.dataset.step]}));
+let d;try{const res=await fetch('data/nyc-taxi.json');if(!res.ok)throw Error('Data unavailable');d=await res.json()}catch(e){document.querySelectorAll('.chart-panel').forEach(x=>x.insertAdjacentHTML('afterbegin','<p role="alert">The charts could not load. Please refresh the page.</p>'));return}
+const boroughs=['Manhattan','Queens','Brooklyn','Bronx','Staten Island'];
+function table(id,heads,rows){$(id).innerHTML='<table><thead><tr>'+heads.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(c=>'<td>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table>'}
+function bars(id,rows,format,color='#337866'){
+const max=Math.max(...rows.map(r=>r.value),1);$(id).innerHTML=rows.length?rows.map(r=>'<div class="barrow" tabindex="0" aria-label="'+esc(r.label+': '+format(r.value))+'" title="'+esc(r.label+': '+format(r.value))+'"><span>'+esc(r.label)+'</span><div class="bartrack" aria-hidden="true"><div class="barfill" style="width:'+r.value/max*100+'%;background:'+color+'"></div></div><b>'+esc(format(r.value))+'</b></div>').join(''):'<p class="noresults">No zones meet these filters.</p>';
+}
+function periods(){const key=$('period-metric').value;const rows=['Off-Peak','AM Peak','PM Peak'].map(p=>d.periods.find(x=>x.period===p));bars('period-chart',rows.map(x=>({label:x.period,value:key==='median'?x.median:x.q3-x.q1})),money);table('period-table',['Period','Trips','Median / mile','25th percentile','75th percentile','IQR'],rows.map(x=>[x.period,n(x.trips),money(x.median),money(x.q1),money(x.q3),money(x.q3-x.q1)]))}
+$('period-metric').addEventListener('change',periods);periods();
+const zones=d.zones.filter(x=>boroughs.includes(x.borough)&&x.trips>=1000).sort((a,b)=>a.zone.localeCompare(b.zone));
+for(const id of ['zone-a','zone-b']){$(id).innerHTML=zones.map(x=>'<option>'+esc(x.zone)+'</option>').join('');$(id).addEventListener('change',compare)}
+$('zone-a').value='South Ozone Park';$('zone-b').value='JFK Airport';
+function compare(){const rows=[$('zone-a').value,$('zone-b').value].map(z=>zones.find(x=>x.zone===z));const max=Math.max(...rows.map(x=>x.q3))*1.1; $('zone-chart').innerHTML=rows.map(x=>'<div class="zone-result"><h3>'+esc(x.zone)+'</h3><strong>'+money(x.median)+'</strong><p>Typical fare per mile</p><div class="range-track" role="img" aria-label="Middle 50 percent: '+money(x.q1)+' to '+money(x.q3)+' per mile; median '+money(x.median)+'"><span class="range-span" style="left:'+x.q1/max*100+'%;width:'+(x.q3-x.q1)/max*100+'%"></span><span class="range-med" style="left:'+x.median/max*100+'%"></span></div><p><b>'+money(x.q1)+'–'+money(x.q3)+'</b> per mile<br>Middle 50% of fares</p><p>Spread: <b>'+money(x.q3-x.q1)+'</b> per mile</p><small>'+n(x.trips)+' trips · '+esc(x.borough)+'</small></div>').join('');table('zone-table',['Zone','Trips','Median','25th percentile','75th percentile','IQR'],rows.map(x=>[x.zone,n(x.trips),money(x.median),money(x.q1),money(x.q3),money(x.q3-x.q1)]))}compare();
+function balance(){const sign=$('balance-direction').value==='source'?1:-1,b=$('balance-borough').value;const rows=d.balance.filter(x=>boroughs.includes(x.borough)&&(b==='All NYC'||x.borough===b)&&x.pickups+x.dropoffs>=2000&&x.imbalance*sign>0).sort((a,b)=>sign*(b.imbalance-a.imbalance)).slice(0,10);bars('balance-chart',rows.map(x=>({label:x.zone,value:Math.abs(x.imbalance)})),n,sign===1?'#337866':'#a57346');table('balance-table',['Zone','Pickups','Drop-offs','Pickups minus drop-offs'],rows.map(x=>[x.zone,n(x.pickups),n(x.dropoffs),n(x.imbalance)]))}
+['balance-direction','balance-borough'].forEach(id=>$(id).addEventListener('change',balance));balance();
+function peaks(){const period=$('peak-period').value,key=$('peak-type').value;const rows=d.peak.filter(x=>x.period===period&&boroughs.includes(x.borough)).sort((a,b)=>b[key]-a[key]).slice(0,10);bars('peak-chart',rows.map(x=>({label:x.zone,value:x[key]})),n);$('peak-summary').textContent=rows[0].zone+' leads this view with '+n(rows[0][key])+' '+(key==='pickups'?'pickups':'drop-offs')+' during the '+(period==='AM Peak'?'morning':'evening')+' peak across the supplied year of trips.';table('peak-table',['Zone','Pickups','Drop-offs'],rows.map(x=>[x.zone,n(x.pickups),n(x.dropoffs)]))}
+['peak-period','peak-type'].forEach(id=>$(id).addEventListener('change',peaks));peaks();
+})();

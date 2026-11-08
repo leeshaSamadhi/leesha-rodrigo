@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysing Road Accident Trends in Victoria | Leesha Rodrigo</title>
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/fonts.css"><link rel="stylesheet" href="../css/refresh.css"><link rel="stylesheet" href="../css/project-navigation.css"></head>
+<body><a class="skip" href="#main-content">Skip to content</a>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Leesha Rodrigo</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About Me</a></li>
+                <li><a href="../index.html#work">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-detail-header">
+        <div class="container">
+            <a href="data-wrangling.html" class="back-link">&larr; Back to Data Wrangling</a>
+            <p class="project-category-label">Data Wrangling / Exploratory Analysis</p>
+            <h1 class="project-detail-title">Analysing Road Accident Trends in Victoria, Australia</h1>
+            <div class="project-tech">
+                <span>R Studio</span>
+                <span>Descriptive Analytics</span>
+                <span>tidyverse</span>
+                <span>Data Cleaning</span>
+                <span>EDA</span>
+                <span>Data Visualisation</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="project-detail-content">
+        <div class="container">
+            <section class="project-section">
+                <h2 class="project-section-title">Overview</h2>
+                <p>This project analyses Victorian road crash data as a road safety consulting brief for a government transport agency. The goal was to turn messy, undocumented government data into a small set of findings a transport safety team could act on.</p>
+                <p>Victoria's road crash data is published as four separate files covering accident details, crash locations, people involved, and atmospheric conditions. After merging and cleaning the files, the analysis explored what drives accident frequency and severity across speed zones, road geometry, time of day, lighting, weather, and driver age.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 class="project-section-title">The Data</h2>
+                <ul class="project-steps-list">
+                    <li><strong>Source:</strong> <u><a href="https://discover.data.vic.gov.au/dataset/victoria-road-crash-data" target="_blank" rel="noopener">Victoria Road Crash Data</a></u>, Victorian Government open data portal.</li>
+                    <li><strong>Structure:</strong> 4 linked CSV files joined on the common <code>ACCIDENT_NO</code> key.</li>
+                    <li><strong>Scale:</strong> Approximately 186,000 accident records and more than 20 variables spanning crash type, severity, road geometry, speed zone, time, weather and demographic information.</li>
+                    <li><strong>Constraint:</strong> No data dictionary was supplied, so coded fields required interpretation and independent verification.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 class="project-section-title">Approach</h2>
+                <h3>1. Import and merge</h3>
+                <p>All four files were loaded, column names and data types were standardised, and the datasets were joined on the shared accident key.</p>
+                <pre><code>df_accident_merged &lt;- df_accident %&gt;%
+  left_join(df_node, by = "ACCIDENT_NO") %&gt;%
+  left_join(df_atmos, by = "ACCIDENT_NO") %&gt;%
+  left_join(df_person, by = "ACCIDENT_NO")</code></pre>
+
+                <h3>2. Diagnose and clean</h3>
+                <p><code>dfSummary()</code> and <code>glimpse()</code> were used to profile the dataset. Missingness was quantified per field rather than dropping rows outright. Missing categorical fields were labelled <code>Unknown</code> to preserve crash records while keeping the gaps visible and auditable.</p>
+                <pre><code>summary_data &lt;- df_accident_merged %&gt;%
+  summarise(across(everything(), ~sum(is.na(.))/n()*100)) %&gt;%
+  pivot_longer(everything(), names_to = "column_name", values_to = "missing_values") %&gt;%
+  filter(missing_values &gt; 0) %&gt;%
+  arrange(desc(missing_values))</code></pre>
+
+                <h3>3. Fix inconsistent values</h3>
+                <p><code>SPEED_ZONE</code> contained placeholder and out-of-range codes such as 0, 777, 888, 999, and values above 200 km/h. These were recoded to missing values, imputed with the column median, and grouped into a custom classification.</p>
+                <pre><code>speed_classification &lt;- function(speed){
+  if (is.na(speed)) return(NA)
+  else if (speed &lt;= 50) return("Low Speed")
+  else if (speed &gt;= 60 &amp; speed &lt;= 90) return("Medium Speed")
+  else if (speed &gt;= 100) return("High Speed")
+}</code></pre>
+
+                <h3>4. Engineer features and analyse</h3>
+                <p>Hour, day, and month were extracted from date-time fields. Fatality rates were grouped by road geometry and accident type, while targeted filters isolated young-driver, high-speed, and adverse-weather crashes to test specific safety hypotheses.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 class="project-section-title">Key Findings</h2>
+                <div class="insight-category">
+                    <h4>60 km/h zones account for 40% of recorded crashes</h4>
+                    <img loading="lazy" src="images/speed_zone_image_1.png" alt="60 km/h crash volume chart" class="analysis-chart">
+                    <p>These are typically dense suburban roads with heavy intersection density and mixed road users. The result points to a volume and exposure problem more than a speed-severity problem.</p>
+                </div>
+                <div class="insight-category">
+                    <h4>Crashes away from intersections are the most severe</h4>
+                    <img loading="lazy" src="images/Accident_severity_image_2.png" alt="Accident severity by road geometry" class="analysis-chart">
+                    <p>Locations recorded as not at an intersection account for approximately 48% of crashes and carry the highest share of fatal and serious-injury outcomes.</p>
+                </div>
+                <div class="insight-category">
+                    <h4>Evening has the highest volume, while overnight has the worst outcomes</h4>
+                    <img loading="lazy" src="images/03_accidents_by_time_period.png" alt="Accident severity by time of day" class="analysis-chart">
+                    <img loading="lazy" src="images/accident_frequency_3.png" alt="Fatality rate by time of day" class="analysis-chart">
+                    <p>The 3-6pm commute produces the most crashes, but the 3-6am window has a visibly higher fatality rate, consistent with higher speeds and reduced visibility.</p>
+                </div>
+                <div class="insight-category">
+                    <h4>Unlit roads are roughly four times deadlier</h4>
+                    <img loading="lazy" src="images/04_lighting_fatality_rate.png" alt="Accident severity by lighting conditions" class="analysis-chart">
+                    <p>Crashes on roads without street lighting have a fatality rate of 7.39 deaths per 100 accidents, compared with under 2% for lit roads or daytime conditions.</p>
+                </div>
+                <div class="insight-category">
+                    <h4>Older drivers face the highest fatality risk</h4>
+                    <img loading="lazy" src="images/05_age_group_impact.png" alt="Accident severity by driver age" class="analysis-chart">
+                    <p>Drivers aged 30-49 account for the largest crash volume, while the 70+ group has the highest fatality rate at around 3%, pointing to vulnerability rather than crash causation.</p>
+                </div>
+                <div class="insight-category">
+                    <h4>Crash volume concentrates in Melbourne growth corridors</h4>
+                    <img loading="lazy" src="images/06_accidents_by_suburb.png" alt="Accident volume by LGA" class="analysis-chart">
+                    <p>Melbourne, Casey, and Geelong LGAs report the highest raw crash counts, helping identify where infrastructure and enforcement investment can have the greatest reach.</p>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2 class="project-section-title">Recommendations</h2>
+                <ul class="project-steps-list">
+                    <li><b>Target unlit rural and outer-metro roads for lighting upgrades</b>, the clearest severity signal in the data.</li>
+                    <li><b>Treat 60 km/h zones as a volume and exposure problem</b> by prioritising intersection design and separated infrastructure.</li>
+                    <li><b>Focus overnight enforcement and driver-fatigue campaigns</b> on the 3-6am window.</li>
+                    <li><b>Design age-specific safety campaigns</b> for commuter exposure among 30-49 year olds and vulnerability among drivers aged 70+.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 class="project-section-title">Notes and Limitations</h2>
+                <ul class="project-steps-list">
+                    <li>No official data dictionary was supplied, so coded fields were interpreted using external research and Victorian road authority documentation.</li>
+                    <li>Missing values were imputed rather than dropped to preserve sample size. This suits descriptive analysis but would need revisiting for causal or predictive modelling.</li>
+                    <li>Findings are descriptive and correlational, not causal. Confounders such as road type and rural versus urban location were acknowledged but not fully isolated.</li>
+                </ul>
+            </section>
+        </div>
+    <nav class="project-navigation pn-bottom" aria-label="Bottom project navigation"><div class="pn-links"><a class="pn-prev" href="powerbi-dashboard.html"><span>← Previous project</span><strong>Makeup Analytics</strong></a><a class="pn-next" href="user-persona-kanban.html"><span>Next project →</span><strong>Stakeholder Needs to a Kanban Board</strong></a></div></nav></main>
+
+<script src="../js/projects.js"></script><button class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause animations">Ⅱ <span>Pause motion</span></button><script src="../js/refresh.js"></script></body>
+</html>

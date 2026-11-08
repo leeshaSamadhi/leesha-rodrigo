@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="WasteGuide, a Dialogflow CX prototype for workplace recycling questions and waste reports.">
+  <title>WasteGuide | Leesha Rodrigo</title>
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/nyc-taxi.css">
+  <link rel="stylesheet" href="../css/project-navigation.css">
+  <style>
+    .waste-figures {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:24px;margin-top:24px}
+    .waste-figures figure {margin:0;min-width:0}
+    .waste-figures figure a {display:grid;place-items:center;background:#fff;border:1px solid #ccd9cf;border-radius:12px;padding:12px}
+    .waste-figures img {display:block;max-width:100%;height:auto;max-height:310px}
+    .waste-figures figcaption {margin-top:9px;font-size:13px;line-height:1.6}
+  </style>
+</head>
+<body><div class="nyc-wrap">
+<nav class="nyc-nav" aria-label="Main navigation"><a href="../index.html">Leesha Rodrigo</a><a href="../index.html#work">← All projects</a></nav>
+<main>
+<header class="nyc-hero">
+<div class="eyebrow">Dialogflow CX · Workplace sustainability · Assessment prototype</div>
+<h1>WasteGuide</h1>
+<p class="lead">Which bin should I use? How do I report a problem? I built WasteGuide to answer these two workplace questions and direct hazardous waste reports to human support.</p>
+</header>
+<section class="nyc-section"><h2>The problem I saw</h2>
+<p>Employees need disposal advice while they’re standing at the bin. An organisation also needs consistent details when someone spots food in the recycling or finds a bin overflowing. WasteGuide supports both conversations.</p></section>
+<section class="nyc-section"><h2>How I solved it</h2>
+<p><strong>For a disposal question,</strong> WasteGuide searches a fictional workplace policy I prepared for the assessment using Whitehorse City Council’s waste guide. A question such as “Where should batteries go?” uses that policy as the source for the answer.</p>
+<p><strong>For a routine report,</strong> it asks for three details: the issue, the type of waste and the location. The employee can confirm the summary or correct it in the same conversation.</p>
+<p><strong>For hazardous waste,</strong> the bot interrupts the routine questions and directs the employee to the facilities or safety team.</p></section>
+<section class="nyc-section"><h2>Chatbot architecture</h2>
+<p>I used six intents in Dialogflow CX to recognise what an employee wants to do. The disposal question opens the <code>waste_lookup</code> data store. The reporting route collects the three fields, then uses the issue type to decide whether to continue to review or give a safety response.</p>
+<div class="waste-figures"><figure><a href="images/wasteguide/conversation-flow.png"><img src="images/wasteguide/conversation-flow.png" loading="lazy" alt="WasteGuide flow diagram showing policy lookup, report review and hazardous waste escalation"></a><figcaption>Conversation flow. Follow the left branch for a disposal question or the right branch to report an issue.</figcaption></figure><figure><a href="images/wasteguide/agent-design.png"><img src="images/wasteguide/agent-design.png" loading="lazy" alt="Dialogflow CX pages and transitions for guidance, reporting, review, changes and completion"></a><figcaption>Dialogflow CX design. The Change Report page lets an employee correct an entry before confirming.</figcaption></figure></div>
+<div class="waste-figures"><figure><a href="images/wasteguide/report-review.png"><img src="images/wasteguide/report-review.png" loading="lazy" alt="Chat transcript showing an overflowing bin report, its three fields and confirmation"></a><figcaption>Routine example. An employee reports an overflowing food-waste bin near reception and confirms the details.</figcaption></figure><figure><a href="images/wasteguide/safety-response.png"><img src="images/wasteguide/safety-response.png" loading="lazy" alt="Chatbot directing an employee who reported a chemical spill to the facilities or safety team"></a><figcaption>Safety example. A chemical spill triggers instructions to follow workplace procedures and contact the appropriate team.</figcaption></figure></div></section>
+<section class="nyc-section" id="benefits"><h2>Benefits and outcomes</h2>
+<ol>
+<li><strong>Clearer recycling decisions.</strong> When an employee asks where batteries go, WasteGuide looks up the workplace policy and gives disposal guidance at the point of need.</li>
+<li><strong>More consistent waste reports.</strong> Employees review and correct three details before confirming a report: the issue, the waste type and the location. This gives facilities staff a consistent description to follow up.</li>
+<li><strong>Safer handling of hazards.</strong> When an employee reports a chemical spill, WasteGuide interrupts routine questions and directs them to the facilities or safety team for help.</li>
+</ol></section>
+<section class="nyc-section" id="improvements"><h2>Improvement points</h2>
+<ul><li><strong>Connect confirmed waste reports to a sustainability dashboard.</strong> The sustainability team could group reports by waste type, issue and location to see which disposal mistakes recur and where. For example, repeated reports of food in recycling bins could guide a workshop or an awareness program on separating food waste. The team could then track how often employees report the same issue after the program.</li><li>Expand the training phrases to cover more ways employees describe the same issue.</li>
+<li>Before workplace use, explain which details the chatbot collects and why. Define who can access conversation logs and how long they are kept.</li></ul></section>
+<section class="nyc-section"><h2>Practical lessons I learned</h2>
+<ul><li><strong>Standardise what needs counting.</strong> “Bin full” and “overflowing bin” can mean the same issue. I grouped them together while leaving location open so employees could describe the place in their own words.</li>
+<li><strong>Give people a chance to correct the record.</strong> Reading the three details back lets an employee fix a misunderstanding before confirming.</li>
+<li><strong>Give different problems different exits.</strong> A flight request needs a reminder of what WasteGuide covers. A disposal question the policy cannot answer needs a knowledge fallback. Hazardous waste needs a person.</li></ul></section>
+<nav class="project-navigation pn-bottom" aria-label="Bottom project navigation"><div class="pn-links"><a class="pn-prev" href="responsible-ai-aged-care.html"><span>← Previous project</span><strong>Responsible AI in Aged Care</strong></a><a class="pn-next" href="powerbi-dashboard.html"><span>Next project →</span><strong>Makeup Analytics</strong></a></div></nav>
+</main></div></body></html>
